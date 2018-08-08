@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Jumbotron, Button } from 'react-bootstrap';
 import PageHeader from './shared/components/header/PageHeader';
+import Home from './components/Home/Home';
 import './App.css';
 
 class App extends Component {
@@ -8,16 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <PageHeader />
-        <Jumbotron>
-          <h1>Hello, world!</h1>
-          <p>
-            This is a simple hero unit, a simple jumbotron-style component for calling
-            extra attention to featured content or information.
-          </p>
-          <p>
-            <Button bsStyle="primary">Learn more</Button>
-          </p>
-        </Jumbotron>
+        <Home />
       </div>
     );
   }
