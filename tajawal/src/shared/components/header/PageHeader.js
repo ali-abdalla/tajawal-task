@@ -6,7 +6,7 @@ class PageHeader extends Component {
     render() {
         return (
             <BootstrapPageHeader className="PageHeader">
-                <img src="https://tjwlcdn.com/cms/assets/logo/logo-rebrand-ltr.svg" className="PageHeader-logo container img-responsive" alt="tajawal" />
+                <img src="https://tjwlcdn.com/cms/assets/logo/logo-rebrand-ltr.svg" className="PageHeader-logo img-responsive" alt="tajawal" />
             </BootstrapPageHeader>
         );
     }

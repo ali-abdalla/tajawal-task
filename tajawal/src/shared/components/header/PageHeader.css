@@ -4,4 +4,11 @@
 
 .PageHeader-logo {
     height: 40px;
+    margin-left: 40px;
+}
+
+@media (max-width: 576px) {
+    .PageHeader-logo {
+        margin-left: 20px;
+    }
 }
