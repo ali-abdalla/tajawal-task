@@ -19,14 +19,11 @@ class Home extends Component {
     onStartDateChange = startDate => {
         this.setState({ startDate })
         this.setState({ valid: !isNaN(this.state.startDate.getTime()) && !isNaN(this.state.endDate.getTime()) })
-        console.log('valid state: ', this.state.valid);
     }
 
     onEndDateChange = endDate => {
         this.setState({ endDate })
         this.setState({ valid: !isNaN(this.state.startDate.getTime()) && !isNaN(this.state.endDate.getTime()) })
-        console.log('valid state: ', this.state.valid);
-
     }
 
     render() {
@@ -41,7 +38,7 @@ class Home extends Component {
                     <span className="Home-date-picker-label">To: </span><DatePicker clearIcon={null} required={true} onChange={this.onEndDateChange} value={this.state.endDate} />
                 </span>
                 <br />
-                <Link to="/search"><Button bsStyle="danger" className="Home-search" disabled={!this.state.valid}>Search</Button></Link>
+                <Link to={`/search?start_date=${this.state.startDate.getTime()}&end_date=${this.state.endDate.getTime()}`} ><Button bsStyle="danger" className="Home-search" disabled={!this.state.valid}>Search</Button></Link>
             </Jumbotron>
         );
     }
