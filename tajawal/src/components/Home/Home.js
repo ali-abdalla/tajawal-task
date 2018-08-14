@@ -3,11 +3,7 @@ import { Jumbotron, Button } from 'react-bootstrap';
 import './Home.css';
 import DatePicker from 'react-date-picker';
 // import DatePicker from 'react-date-picker/dist/entry.nostyle';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-  } from 'react-router-dom'
+import { Link } from 'react-router-dom'
   
 class Home extends Component {
     state = {

@@ -5,7 +5,6 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom'
 import Search from './components/Search/Search';
 
