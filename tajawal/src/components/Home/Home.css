@@ -1,5 +1,11 @@
 .Home-date-picker {
-    margin-top: 80px;
-    margin-bottom: 20px;
-    margin-left: 10px;
+    margin: 50px;
+}
+
+.Home-date-picker-label {
+    margin-right: 10px;
+}
+
+.Home-search {
+    margin-top: 30px;
 }

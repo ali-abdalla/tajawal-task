@@ -7,25 +7,40 @@ import DatePicker from 'react-date-picker';
 class Home extends Component {
     state = {
         startDate: new Date(),
-        endDate: new Date()
+        endDate: new Date(),
+        valid: true
     };
 
-    onStartDateChange = startDate => this.setState({ startDate })
+    onStartDateChange = startDate => {
+        this.setState({ startDate })
+        this.setState({ valid: !isNaN(this.state.startDate.getTime()) && !isNaN(this.state.endDate.getTime()) })
+        console.log('valid state: ', this.state.valid);
+    }
 
-    onEndDateChange = endDate => this.setState({ endDate })
+    onEndDateChange = endDate => {
+        this.setState({ endDate })
+        this.setState({ valid: !isNaN(this.state.startDate.getTime()) && !isNaN(this.state.endDate.getTime()) })
+        console.log('valid state: ', this.state.valid);
+
+    }
 
     search = () => {
-        console.log()
+        this.props.history.push('/search')
     }
 
     render() {
         return (
             <Jumbotron>
                 <h1>Search for hotels all around the world</h1>
-                <DatePicker className="Home-date-picker" clearIcon={null} required={true} onChange={this.onStartDateChange} value={this.state.startDate} />
-                <DatePicker className="Home-date-picker" clearIcon={null} required={true} onChange={this.onEndDateChange} value={this.state.endDate} />
                 <br />
-                <Button bsStyle="danger" onClick={this.search}>Search</Button>
+                <span className="Home-date-picker">
+                    <span className="Home-date-picker-label">From: </span><DatePicker clearIcon={null} required={true} onChange={this.onStartDateChange} value={this.state.startDate} />
+                </span>
+                <span className="Home-date-picker">
+                    <span className="Home-date-picker-label">To: </span><DatePicker clearIcon={null} required={true} onChange={this.onEndDateChange} value={this.state.endDate} />
+                </span>
+                <br />
+                <Button bsStyle="danger" className="Home-search" disabled={!this.state.valid} onClick={this.search}>Search</Button>
             </Jumbotron>
         );
     }
